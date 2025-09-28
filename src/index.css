@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AI-Crop Guardian Design System - Farmer-Friendly Earthy Theme */
+
+@layer base {
+  :root {
+    /* Base colors - Light Mode */
+    --background: 45 15% 97%;
+    --foreground: 120 8% 15%;
+
+    /* Card system */
+    --card: 45 20% 95%;
+    --card-foreground: 120 8% 15%;
+
+    /* Popover */
+    --popover: 45 20% 95%;
+    --popover-foreground: 120 8% 15%;
+
+    /* Primary - Forest Green */
+    --primary: 120 35% 25%;
+    --primary-foreground: 45 20% 95%;
+    --primary-glow: 120 45% 35%;
+
+    /* Secondary - Soil Brown */
+    --secondary: 30 25% 65%;
+    --secondary-foreground: 120 8% 15%;
+
+    /* Muted - Sage */
+    --muted: 85 15% 85%;
+    --muted-foreground: 120 8% 40%;
+
+    /* Accent - Crop Yellow */
+    --accent: 45 85% 65%;
+    --accent-foreground: 120 8% 15%;
+
+    /* Health Green */
+    --success: 120 60% 45%;
+    --success-foreground: 45 20% 95%;
+
+    /* Warning - Pest Orange */
+    --warning: 25 85% 55%;
+    --warning-foreground: 45 20% 95%;
+
+    /* Destructive - Disease Red */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 45 20% 95%;
+
+    /* Border and Input */
+    --border: 85 20% 80%;
+    --input: 85 20% 88%;
+    --ring: 120 35% 25%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-hero: linear-gradient(135deg, hsl(120 35% 25%), hsl(85 45% 35%), hsl(45 85% 65%));
+    --gradient-earth: linear-gradient(180deg, hsl(45 20% 95%), hsl(85 15% 85%));
+    --gradient-crop: linear-gradient(90deg, hsl(120 60% 45%), hsl(85 55% 55%));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(120 35% 25% / 0.1);
+    --shadow-strong: 0 10px 30px -10px hsl(120 35% 25% / 0.2);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
+
+    /* Border radius */
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Custom animations and utilities */
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .bg-gradient-earth {
+    background: var(--gradient-earth);
+  }
+
+  .bg-gradient-crop {
+    background: var(--gradient-crop);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-strong {
+    box-shadow: var(--shadow-strong);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Smooth scrolling for better UX */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Agricultural-themed animations */
+@keyframes crop-grow {
+  0% {
+    transform: scale(0.8) translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes leaf-sway {
+  0%, 100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--primary-glow) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px hsl(var(--primary-glow) / 0.5);
+  }
+}
